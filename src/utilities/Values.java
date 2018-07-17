@@ -6,6 +6,8 @@ public class Values {
 	public static int ALTO = 600;
 	public static int ALTO_BTN = 30;
 	public static int DISTANCE = 600;
+	public static int PartALTO = ALTO / 10;
+	public static int PartANCHO = ANCHO / 10;
 	public final static String TITLE =  "Prueba SocketIO";
 	
 }

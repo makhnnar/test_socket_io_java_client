@@ -1,7 +1,9 @@
 package views.login;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import utilities.HintTextField;
+import utilities.Values;
 
 
 public class LoginView extends JFrame{
@@ -20,15 +23,18 @@ public class LoginView extends JFrame{
 	
 	public LoginView(){
 		super("GridBagLayout");
-		
-		this.setSize(400, 400);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Dimension display = Toolkit.getDefaultToolkit().getScreenSize(); 
+		Values.ALTO = (int)display.getHeight()-1;
+		Values.ANCHO = (int)display.getWidth()-30;
+		this.setSize(Values.ALTO , Values.ALTO);
 		this.setTitle("Login");
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints(); //restricciones de comportamiento de los elementos en la ventana
 		LoginPhone = new  HintTextField("Phone Number");
 		LoginPass = new HintTextField("Password");
 		LoginBtn = new JButton("Login");
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 			
 		gbc.gridx = 1; 
